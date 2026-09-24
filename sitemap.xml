@@ -19,8 +19,6 @@
   <url><loc>https://lp.aeduardabispo.com.br/palestras/mes-da-mulher/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lp.aeduardabispo.com.br/palestras/setembro-amarelo/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://lp.aeduardabispo.com.br/palestras/setembro-azul/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
-  <url><loc>https://lp.aeduardabispo.com.br/terapia-social/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://lp.aeduardabispo.com.br/mapa-do-site/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+<url><loc>https://lp.aeduardabispo.com.br/mapa-do-site/</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://lp.aeduardabispo.com.br/politica-de-privacidade/</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>
