@@ -278,3 +278,51 @@ a{text-decoration:none}
   .footer-brand{width:180px !important}
   .footer-brand img{width:180px !important}
 }
+
+/* Final hierarchy refinement */
+.hero-grid{min-height:620px}
+.hero-copy{padding:78px 64px 72px 0}
+.hero-home h1{font-size:clamp(46px,5.4vw,68px)}
+.hero-portrait{min-height:570px}
+h2{font-size:clamp(34px,4vw,48px)}
+.home-thesis{padding:78px 0}
+.territories{padding:90px 0}
+.profile-section{padding:100px 0}
+.business-bridge{padding:96px 0}
+.thought-section{padding:80px 0}
+.talks-section{padding:90px 0}
+.closing-section{padding:80px 0}
+
+.profile-matrix{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  margin:28px 0 30px;border-top:1px solid var(--line);border-left:1px solid var(--line)
+}
+.profile-matrix span{
+  padding:13px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  font-size:12px;text-transform:uppercase;letter-spacing:.8px
+}
+
+.talks-grid{grid-template-columns:1.05fr .95fr;align-items:center}
+.talks-copy .btn{margin-top:12px}
+.talks-panel{border-top:1px solid var(--line)}
+.talks-panel span{
+  display:block;padding:18px 0;border-bottom:1px solid var(--line);
+  font:400 25px/1.2 Georgia,"Times New Roman",serif
+}
+
+.closing-actions{grid-template-columns:1fr;gap:14px}
+.route-button{min-height:108px}
+.primary-route{background:var(--ink);color:#fff;border-color:var(--ink)}
+.primary-route span{color:#d7d0c7}
+
+.btn,.nav-btn,.footer-btn,.route-button{transition:border-color .2s ease,background-color .2s ease,color .2s ease}
+
+@media(max-width:900px){
+  .hero-grid{min-height:0}
+  .hero-copy{padding:38px 18px 48px}
+  .hero-home h1{font-size:clamp(40px,11vw,54px)}
+  .hero-portrait{height:56vh;max-height:520px}
+  .home-thesis,.territories,.profile-section,.business-bridge,.thought-section,.talks-section,.closing-section{padding:64px 0}
+  .profile-matrix{grid-template-columns:1fr 1fr}
+  .talks-grid{grid-template-columns:1fr}
+}
