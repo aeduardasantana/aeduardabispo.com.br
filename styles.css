@@ -70,3 +70,75 @@ h2{font-size:clamp(34px,4.5vw,56px);line-height:1.08;margin:0 0 20px}
   .hero-home .actions{display:grid;grid-template-columns:1fr}
   .hero-home .btn{width:100%}
 }
+
+/* Home editorial narrative */
+.home-thesis{background:var(--bg)}
+.thesis-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:90px;align-items:start}
+.thesis-copy{padding-top:8px}
+
+.territories{background:var(--paper)}
+.section-heading{max-width:780px;margin-bottom:44px}
+.territory-list{border-top:1px solid var(--line)}
+.territory-item{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line)}
+.territory-number{font-size:12px;letter-spacing:1.8px;color:var(--gold);font-weight:700}
+.territory-item h3{margin:0 0 8px;font:400 31px/1.15 Georgia,"Times New Roman",serif}
+.territory-item p{margin:0;color:var(--muted);max-width:720px}
+.territory-item>a{font-size:12px;text-transform:uppercase;letter-spacing:.8px;text-decoration:none;color:var(--gold);white-space:nowrap}
+
+.profile-section{background:var(--bg)}
+.profile-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:84px;align-items:center}
+.editorial-photo{margin:0;overflow:hidden;background:#e7dfd2}
+.editorial-photo img{width:100%;height:100%;display:block;object-fit:cover}
+.portrait-tall{height:650px}
+.portrait-tall img{object-position:center 18%}
+.profile-copy h2{max-width:720px}
+.profile-tags{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0}
+.profile-tags span{border:1px solid var(--line);padding:8px 11px;font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+.text-link{display:inline-block;margin-top:8px;color:var(--gold);text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.8px}
+
+.business-bridge{padding:0}
+.business-grid{display:grid;grid-template-columns:1.06fr .94fr;min-height:690px}
+.business-copy{padding:92px 80px 92px 0;display:flex;flex-direction:column;justify-content:center}
+.business-copy h2{max-width:720px}
+.business-points{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18px 0 32px;border-top:1px solid #3b352f}
+.business-points span{padding:14px 0;border-bottom:1px solid #3b352f;font-size:14px}
+.business-points span:nth-child(odd){padding-right:24px}
+.business-photo{min-height:690px}
+.business-photo img{object-position:center center}
+.btn.light{border-color:#fff;color:#fff;background:transparent;width:max-content}
+
+.thought-section{background:var(--paper)}
+.thought-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+.thought-copy{padding-right:20px}
+.thought-photo{height:540px}
+.thought-photo img{object-position:center center}
+
+.talks-section{background:var(--bg);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.talks-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:90px;align-items:start}
+
+.closing-section{background:var(--paper);padding:0}
+.closing-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:650px}
+.closing-photo{min-height:650px}
+.closing-photo img{object-position:center center}
+.closing-copy{padding:84px 0 84px 72px;display:flex;flex-direction:column;justify-content:center}
+.closing-links{margin-top:24px;border-top:1px solid var(--line)}
+.closing-links a{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.closing-links strong{font:400 22px Georgia,"Times New Roman",serif}
+.closing-links span{color:var(--muted);font-size:14px}
+
+@media(max-width:900px){
+  .thesis-grid,.profile-grid,.thought-grid,.talks-grid,.business-grid,.closing-grid{grid-template-columns:1fr;gap:40px}
+  .territory-item{grid-template-columns:44px 1fr;gap:18px}
+  .territory-item>a{grid-column:2;justify-self:start}
+  .portrait-tall,.thought-photo,.business-photo,.closing-photo{height:auto;min-height:0;aspect-ratio:4/5}
+  .profile-grid .editorial-photo{order:1}.profile-copy{order:2}
+  .business-copy{padding:64px 18px 24px}
+  .business-photo{margin:0 18px 64px}
+  .business-points{grid-template-columns:1fr}
+  .business-points span:nth-child(odd){padding-right:0}
+  .thought-grid{gap:30px}
+  .thought-copy{padding-right:0}
+  .closing-copy{padding:52px 18px 64px}
+  .closing-photo{margin:0}
+  .closing-links a{grid-template-columns:1fr;gap:4px}
+}
