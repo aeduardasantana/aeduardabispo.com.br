@@ -563,3 +563,19 @@ h2{font-size:clamp(34px,4vw,48px)}
 @media(max-width:380px){
   .inner-index{grid-template-columns:1fr}
 }
+
+/* Palestras thematic hub */
+.talks-directory-section{background:var(--paper)}
+.talks-directory{border-top:1px solid var(--line)}
+.talk-directory-row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:center;
+  padding:24px 0;border-bottom:1px solid var(--line)
+}
+.talk-directory-row>div{display:grid;grid-template-columns:42px minmax(0,1fr);gap:8px 16px;align-items:start}
+.talk-directory-row>div>span{grid-row:1 / span 2;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1.4px;padding-top:4px}
+.talk-directory-row strong{font:400 25px/1.2 Georgia,"Times New Roman",serif}
+.talk-directory-row p{margin:0;color:var(--muted);max-width:760px}
+@media(max-width:900px){
+  .talk-directory-row{grid-template-columns:1fr;gap:16px;padding:22px 0}
+  .talk-directory-row .btn{width:100%}
+}
