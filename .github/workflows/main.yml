@@ -31,4 +31,4 @@ jobs:
 
         localDir: "./"
 
-        remoteDir: "./public_html/lp/"
+        remoteDir: "./public_html/"
