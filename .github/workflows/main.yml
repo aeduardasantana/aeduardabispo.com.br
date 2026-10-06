@@ -1,34 +1,23 @@
-name: Deploy via ftp
+name: Deploy via FTP
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-
   deploy:
-
-    name: Deploy
-
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - uses: actions/checkout@v2
-
-
-
-
-    - name: FTP Deploy Locaweb
-
-      uses: JEFFERSON-FERREIRA-LIMA/ftp-deploy@1.0.0
-
-      with:
-
-        host: ${{ secrets.HOST }} 
-
-        user: ${{ secrets.USER }}
-
-        password: ${{ secrets.PASS }}
-
-        localDir: "./"
-
-        remoteDir: "./public_html/"
+      - name: Deploy para Locaweb
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          local-dir: ./
+          server-dir: ./public_html/
