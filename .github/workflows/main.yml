@@ -19,7 +19,7 @@ jobs:
 
     - name: FTP Deploy Locaweb
 
-      uses: locaweb/ftp-deploy@1.0.0
+      uses: JEFFERSON-FERREIRA-LIMA/ftp-deploy@1.0.0
 
       with:
 
