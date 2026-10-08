@@ -579,3 +579,90 @@ h2{font-size:clamp(34px,4vw,48px)}
   .talk-directory-row{grid-template-columns:1fr;gap:16px;padding:22px 0}
   .talk-directory-row .btn{width:100%}
 }
+
+
+/* Rodapé editorial: alinhamento institucional GEB, identidade própria Eduarda Bispo */
+.site-footer.site-footer--editorial{
+  background:#0d0c0a;
+  color:#f5f0e8;
+  border-top:4px solid var(--gold);
+  padding:0;
+}
+.footer-editorial-shell{padding-top:clamp(52px,6vw,76px);padding-bottom:28px}
+.footer-editorial-main{
+  display:grid;
+  grid-template-columns:minmax(260px,1.25fr) minmax(0,1.75fr);
+  gap:clamp(48px,7vw,110px);
+}
+.footer-editorial-about{max-width:390px}
+.footer-editorial-logo{display:inline-block;max-width:220px}
+.footer-editorial-logo img{display:block;width:100%;height:auto;object-fit:contain}
+.footer-editorial-about p{
+  color:#c9c0b5;
+  font-size:14px;
+  line-height:1.7;
+  margin:20px 0 0;
+}
+.footer-editorial-cta{
+  display:inline-flex;
+  gap:12px;
+  align-items:center;
+  margin-top:26px;
+  padding:0 0 6px;
+  border-bottom:1px solid #7a6c58;
+  color:#f5f0e8;
+  font-size:12px;
+  letter-spacing:.035em;
+  text-decoration:none;
+}
+.footer-editorial-nav{
+  display:grid;
+  grid-template-columns:1.1fr .9fr 1.1fr;
+  gap:clamp(20px,3vw,44px);
+  align-items:start;
+}
+.footer-editorial-column{display:flex;flex-direction:column;align-items:flex-start;gap:13px;min-width:0}
+.footer-editorial-column strong{
+  color:var(--gold);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin-bottom:9px;
+}
+.footer-editorial-column a{
+  color:#d4cbc0;
+  font-size:13px;
+  line-height:1.5;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+  transition:color .2s ease;
+}
+.footer-editorial-column a:hover,.footer-editorial-column a:focus-visible,.footer-editorial-cta:hover{color:#fff}
+.footer-editorial-bottom{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 32px;
+  margin-top:clamp(48px,6vw,76px);
+  padding-top:23px;
+  border-top:1px solid #37312b;
+  color:#a89f94;
+  font-size:11px;
+  line-height:1.6;
+}
+@media(max-width:950px){
+  .footer-editorial-main{grid-template-columns:1fr;gap:45px}
+  .footer-editorial-nav{max-width:740px}
+}
+@media(max-width:600px){
+  .footer-editorial-shell{padding-top:44px;padding-bottom:24px}
+  .footer-editorial-main{gap:36px}
+  .footer-editorial-nav{grid-template-columns:1fr 1fr;gap:36px 22px}
+  .footer-editorial-column:last-child{grid-column:1/-1}
+  .footer-editorial-bottom{margin-top:40px;display:grid;gap:8px}
+}
+@media(max-width:380px){
+  .footer-editorial-nav{grid-template-columns:1fr}
+  .footer-editorial-column:last-child{grid-column:auto}
+}
