@@ -36,7 +36,7 @@ if (siteFooter) {
         </nav>
       </div>
       <div class="footer-editorial-bottom">
-        <span>Desenvolvimento: <a href="https://compassrosesystems.com.br/" target="_blank" rel="noopener noreferrer">Compass Rose Systems</a></span>
+        <span>Desenvolvido por <a href="https://gebtecnologia.grupoeduardabispo.com.br/" target="_blank" rel="noopener noreferrer"><strong>Compass Rose Systems · GEB Tecnologia</strong></a></span>
         <span>© ${new Date().getFullYear()} Eduarda Bispo. Todos os direitos reservados.</span>
       </div>
     </div>`;
