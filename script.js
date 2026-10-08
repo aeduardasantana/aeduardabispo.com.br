@@ -36,7 +36,7 @@ if (siteFooter) {
         </nav>
       </div>
       <div class="footer-editorial-bottom">
-        <span>Eduarda Bispo · Marca e atuação profissional</span>
+        <span>Desenvolvimento: <a href="https://compassrosesystems.com.br/" target="_blank" rel="noopener noreferrer">Compass Rose Systems</a></span>
         <span>© ${new Date().getFullYear()} Eduarda Bispo. Todos os direitos reservados.</span>
       </div>
     </div>`;
