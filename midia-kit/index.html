@@ -38,7 +38,7 @@ function render(){
    const zoom=1.72;
    const cover=Math.max(region.w/photo.naturalWidth,region.h/photo.naturalHeight);
    const sourceW=region.w/(cover*zoom),sourceH=region.h/(cover*zoom);
-   const focalX=.56*photo.naturalWidth,focalY=.29*photo.naturalHeight;
+   const focalX=.56*photo.naturalWidth,focalY=.41*photo.naturalHeight;
    const sx=Math.max(0,Math.min(photo.naturalWidth-sourceW,focalX-sourceW*.5));
    const sy=Math.max(0,Math.min(photo.naturalHeight-sourceH,focalY-sourceH*.5));
    ctx.save();
