@@ -10,8 +10,8 @@ const basePhoto=window.EDUARDA244_AVIF || '';
 const themes={forest:'#102621',navy:'#172f46',wine:'#4a2539',graphite:'#292f35',terracotta:'#764532'};
 const automatic={ 'o-invisivel-tambem-importa':'forest','saude-mental':'forest','lideranca-situacional':'navy','protagonismo-sem-cargo':'navy','relacoes-interpessoais':'terracotta','assedio':'wine','ia-e-tecnologia':'graphite','mes-da-mulher':'wine','setembro-amarelo':'terracotta','setembro-azul':'navy','personalizada':'forest'};
 function rgb(hex){const n=parseInt(hex.slice(1),16);return[(n>>16)&255,(n>>8)&255,n&255]}
-function darkColor(hex){const a=rgb(hex);return 'rgb('+a.map(n=>Math.round(n*.45)).join(',')+')'}
-function rgba(hex,opacity){return 'rgba('+rgb(hex).map(n=>Math.round(n*.45)).join(',')+','+opacity+')'}
+function darkColor(hex){const a=rgb(hex);const light=(a[0]*.2126+a[1]*.7152+a[2]*.0722);const scale=light>105?105/light:1;return 'rgb('+a.map(n=>Math.round(n*scale)).join(',')+')'}
+function rgba(hex,opacity){const a=rgb(hex);const light=a[0]*.2126+a[1]*.7152+a[2]*.0722;const k=light>105?105/light:1;return 'rgba('+a.map(n=>Math.round(n*k)).join(',')+','+opacity+')'}
 function currentTheme(){const key=byId('palette').value;const name=key==='automatic'?(automatic[select.value]||'forest'):key;const base=name==='custom'?byId('custom-color').value:(themes[name]||themes.forest);return {base:darkColor(base),fade:o=>rgba(base,o),accent:'#efbd92'}}
 
 const query=new URLSearchParams(location.search), chosen=query.get('palestra');
