@@ -47,10 +47,10 @@ function render(){
    ctx.restore();
  }
  // A proteção de contraste fica só na área tipográfica.
- const fade=ctx.createLinearGradient(0,0,770,0);
- fade.addColorStop(0,theme.base);fade.addColorStop(.54,theme.fade(.98));
- fade.addColorStop(.75,theme.fade(.72));fade.addColorStop(1,theme.fade(0));
- ctx.fillStyle=fade;ctx.fillRect(0,0,800,1190);
+ const fade=ctx.createLinearGradient(0,0,660,0);
+ fade.addColorStop(0,theme.base);fade.addColorStop(.55,theme.fade(.98));
+ fade.addColorStop(.78,theme.fade(.48));fade.addColorStop(1,theme.fade(0));
+ ctx.fillStyle=fade;ctx.fillRect(0,0,660,1190);
  // Rodapé editorial independente.
  ctx.fillStyle=theme.base;ctx.fillRect(0,1175,W,175);
  ctx.fillStyle='#eebb93';ctx.fillRect(70,91,86,5);
