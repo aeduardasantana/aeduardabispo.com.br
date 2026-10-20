@@ -50,7 +50,7 @@ if (siteFooter) {
   const blog='https://blog.grupoeduardabispo.com.br/';
   // A origem GitHub Raw permite leitura CORS por sites externos, sem depender dos headers do servidor do blog.
   const raw='https://raw.githubusercontent.com/aeduardasantana/gebblog/main/conteudo/';
-  const indices=['indices/legado.json','indices/lote-01.json','indices/lote-02.json','indices/lote-03.json','indices/lote-04.json','indices/lote-05.json'];
+  const indices=['indices/legado.json','indices/lote-01.json','indices/lote-02.json','indices/lote-03.json','indices/lote-04.json','indices/lote-05.json','indices/lote-06.json'];
   const esc=s=>String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
   const iso=a=>{
