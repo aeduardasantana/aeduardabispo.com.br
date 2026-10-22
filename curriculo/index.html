@@ -70,6 +70,21 @@ main{display:flex!important;flex-direction:column!important;height:281mm!importa
 .closing h2{font-size:14.5pt!important}
 .closing p,.contacts{font-size:8pt!important;line-height:1.33!important}
 }
+
+/* Refinamento final: enquadramento do retrato e respiro lateral dos painéis */
+.portrait img{object-position:50% 72%}
+@media screen and (min-width:741px){
+.hero .container,.closing .container{width:min(1078px,calc(100% - 76px))}
+.hero-copy{padding-left:18px}
+}
+@media print{
+.hero,.closing{margin-left:4mm!important;margin-right:4mm!important;width:auto!important}
+.hero .container,.closing .container{width:100%!important}
+.hero-copy{padding:4mm 4mm 2mm 4mm!important}
+.hero-grid{grid-template-columns:1.36fr .64fr!important}
+.portrait img{object-position:50% 72%!important}
+.closing-grid{padding-left:4mm!important;padding-right:4mm!important}
+}
 </style></head><body>
 <header><div class="container"><a class="brand" href="/">Eduarda Bispo</a><a class="navlink" href="/midia-kit/">Mídia kit de palestras ↗</a></div></header>
 <main><section class="hero"><div class="container hero-grid"><div class="hero-copy"><div class="overline">Perfil profissional · Currículo institucional</div><h1>Eduarda<br>Bispo</h1><p class="role">Estrategista de negócios · Fundadora do GEB</p><p class="opening">Gestão empresarial, desenvolvimento humano e educação inclusiva conectados por uma visão estratégica de pessoas, processos e acessibilidade.</p><div class="actions"><button type="button" class="button primary" onclick="window.print()">↓ Salvar currículo em PDF</button><a class="button outline" href="mailto:falecom@aeduardabispo.com.br?subject=Contato%20profissional%20-%20Eduarda%20Bispo">Entrar em contato ↗</a></div></div><div class="portrait"><img src="/assets/FOTOS%20EDUARDA%20PARA%20SITE/Eduarda_244.jpg" alt="Fotografia profissional de Eduarda Bispo"></div></div></section>
