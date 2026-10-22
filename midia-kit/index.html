@@ -140,7 +140,7 @@ function render(){
    for(const val of events){for(const line of textWrap(val,435).slice(0,2)){if(yy>1100)break;ctx.fillText(line,70,yy);yy+=35}yy+=7}
  }
  ctx.fillStyle='#fffdf8';ctx.font='bold 54px Georgia';ctx.fillText('Eduarda Bispo',70,1261);
- ctx.fillStyle='#eebb93';ctx.font='22px Arial';ctx.fillText('GESTÃO  ·  DESENVOLVIMENTO HUMANO  ·  INCLUSÃO',70,1300);
+ ctx.fillStyle='#eebb93';ctx.font='22px Arial';ctx.fillText('GESTÃO  ·  PROCESSOS  ·  COMPORTAMENTO  ·  TECNOLOGIA',70,1300);
  drawLibras();
 }
 function drawLibras(){if(!byId('libras').checked||!librasReady)return;const size=108,x=915,y=1200;ctx.fillStyle='#ffffff';ctx.fillRect(x-5,y-5,size+10,size+10);ctx.drawImage(librasImage,x,y,size,size)}
