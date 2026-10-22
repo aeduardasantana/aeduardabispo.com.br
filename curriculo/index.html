@@ -112,7 +112,7 @@ main{display:flex!important;flex-direction:column!important;height:281mm!importa
   if(!button)return;
   button.addEventListener('click',async function(){
     const link='https://aeduardabispo.com.br/curriculo/';
-    const message='Conheça a trajetória profissional de Eduarda Bispo, estrategista de negócios e fundadora do GEB — Grupo Eduarda Bispo. Uma atuação que integra gestão e negócios, educação e inclusão, saúde mental e desenvolvimento humano. Acesse o currículo institucional completo:\\n'+link;
+    const message='Conheça a trajetória profissional de Eduarda Bispo, estrategista de negócios e fundadora do GEB — Grupo Eduarda Bispo. Uma atuação que integra gestão e negócios, educação e inclusão, saúde mental e desenvolvimento humano. Acesse o currículo institucional completo:\n'+link;
     try{
       if(navigator.clipboard&&window.isSecureContext){
         await navigator.clipboard.writeText(message);
