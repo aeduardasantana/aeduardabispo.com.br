@@ -1,7 +1,7 @@
 const t=document.querySelector('.menu-toggle');const m=document.querySelector('.menu');if(t&&m){
   if(!m.id)m.id='menu-principal';
   t.setAttribute('aria-controls',m.id);
-  function closeMenu(returnFocus=false){m.classList.remove('open');t.setAttribute('aria-expanded','false');if(returnFocus)t.focus()}
+  function closeMenu(returnFocus=false){m.classList.remove('open');t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Abrir menu');if(returnFocus)t.focus()}
   t.addEventListener('click',()=>{const open=m.classList.toggle('open');t.setAttribute('aria-expanded',String(open));t.setAttribute('aria-label',open?'Fechar menu':'Abrir menu')});
   m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu()));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))closeMenu(true)});
