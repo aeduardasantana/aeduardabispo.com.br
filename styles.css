@@ -1089,3 +1089,30 @@ img{height:auto}
 .talks-directory-section .talk-directory-row a:focus-visible{outline:3px solid var(--eb-focus);outline-offset:4px}
 @media(max-width:900px){.talks-editorial-photo{justify-self:start;max-width:240px}.talks-editorial-photo img{max-height:240px}}
 @media(max-width:600px){.talks-editorial-photo{max-width:100%;width:100%}.talks-editorial-photo img{height:260px;max-height:none}}
+
+
+/* Bloco 11 — Contato e privacidade */
+.eb-contact{background:var(--eb-ivory);color:var(--eb-text)}
+.eb-contact h1,.eb-contact h2,.eb-contact h3{font-family:var(--eb-serif);font-weight:400;letter-spacing:-.03em;line-height:1.13}
+.eb-contact-hero{background:var(--eb-forest);color:#fff}
+.eb-contact-hero .eb-overline{color:#edd0b4}
+.eb-contact-hero h1{font-size:clamp(2.65rem,5.6vw,5.6rem);max-width:920px;margin:18px 0 26px}
+.eb-contact-lead{font-size:clamp(1.1rem,1.8vw,1.36rem);max-width:780px;color:#e7eae6;line-height:1.7}
+.eb-contact-choices{background:var(--eb-white)}
+.eb-contact-choices h2,.eb-contact-direct h2{font-size:clamp(2.15rem,3.8vw,3.7rem);margin:0 0 38px}
+.eb-contact-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(25px,5vw,85px)}
+.eb-contact-options article{border-top:1px solid var(--eb-hairline);padding:27px 0 33px}
+.eb-contact-options article>span{font-size:.72rem;color:var(--eb-copper);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.eb-contact-options h3{font-size:clamp(1.55rem,2.5vw,2.3rem);margin:15px 0 13px}
+.eb-contact-options p,.eb-contact-direct p{font-size:1rem;line-height:1.75;color:var(--eb-secondary)}
+.eb-contact-options a{display:block;width:fit-content;min-height:44px;padding:11px 0;color:var(--eb-forest);font-weight:700;text-underline-offset:4px}
+.eb-contact-direct{background:var(--eb-sand)}
+.eb-contact-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,7vw,105px)}
+.eb-contact-direct-links{border-top:1px solid #bea995}
+.eb-contact-direct-links>a{display:flex;flex-direction:column;gap:5px;padding:18px 0;border-bottom:1px solid #bea995;text-decoration:none}
+.eb-contact-direct-links strong{font-size:1rem}
+.eb-contact-direct-links span{color:var(--eb-forest);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.eb-privacy{max-width:920px}
+.eb-privacy h2{font-size:clamp(1.55rem,2.8vw,2.35rem);margin:35px 0 15px}
+.eb-privacy p{max-width:78ch}
+@media(max-width:760px){.eb-contact-options,.eb-contact-split{grid-template-columns:1fr}.eb-contact .eb-section{padding-block:58px}.eb-contact-choices h2{margin-bottom:25px}}
