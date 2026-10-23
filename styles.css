@@ -769,3 +769,28 @@ img{height:auto}
   a{text-decoration:underline}
   .eb-section{padding-block:24px}
 }
+
+
+/* Bloco 02 — navegação global e rodapé editorial */
+.site-header .nav{position:relative}
+.site-header .menu{gap:clamp(10px,1.5vw,22px)}
+.site-header .menu a{white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
+.site-header .menu a[aria-current="page"]{color:var(--eb-copper);font-weight:700}
+.site-header .menu-toggle:focus-visible{outline:3px solid var(--eb-focus);outline-offset:3px}
+.footer-editorial-column a:focus-visible,.footer-editorial-cta:focus-visible{outline:2px solid #efd1b5;outline-offset:4px}
+.footer-editorial-bottom a{color:inherit;text-underline-offset:3px}
+@media(max-width:1100px){
+ .site-header .menu-toggle{display:block;flex:0 0 auto}
+ .site-header .menu{display:none;position:absolute;top:100%;left:0;right:0;z-index:60;flex-direction:column;align-items:stretch;gap:0;padding:10px 18px 18px;background:var(--eb-ivory);border:1px solid var(--eb-hairline);box-shadow:0 18px 35px rgba(20,30,28,.12);max-height:calc(100dvh - 85px);overflow-y:auto}
+ .site-header .menu.open{display:flex}
+ .site-header .menu a{display:flex;min-height:48px;padding:10px 5px;border-bottom:1px solid var(--eb-hairline)}
+}
+@media(max-width:600px){
+ .site-header .nav{min-height:72px}
+ .site-header .menu{top:100%}
+ .footer-editorial-nav{grid-template-columns:1fr 1fr}
+}
+@media(max-width:420px){
+ .footer-editorial-nav{grid-template-columns:1fr}
+ .footer-editorial-column:last-child{grid-column:auto}
+}
