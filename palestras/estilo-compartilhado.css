@@ -1,0 +1,10 @@
+/* Bloco 09 — acabamento editorial transversal das LPs, sem substituir os temas. */
+.talk-utility{position:relative;z-index:10;background:#f6f2eb;color:#19383b;border-bottom:1px solid #d8d0c5;font:600 12px/1.4 Arial,Helvetica,sans-serif}
+.talk-utility-inner{max-width:1160px;margin:auto;padding:11px 24px;display:flex;gap:12px 28px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.talk-utility nav{display:flex;gap:9px 23px;flex-wrap:wrap;align-items:center}
+.talk-utility a{color:#19383b;text-decoration:underline;text-underline-offset:4px;display:inline-flex;align-items:center;min-height:40px}
+.talk-utility a:focus-visible{outline:3px solid #155d6b;outline-offset:3px}
+.talk-utility .talk-utility-cta{background:#19383b;color:#fff;padding:7px 14px;text-decoration:none;border:1px solid #19383b}
+.talk-utility .talk-utility-cta:hover{background:#10282b}
+@media(max-width:650px){.talk-utility-inner{padding:10px 18px;align-items:flex-start}.talk-utility nav{gap:2px 15px}.talk-utility a{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
