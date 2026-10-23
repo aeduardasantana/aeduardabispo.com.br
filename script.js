@@ -6,7 +6,7 @@ const t=document.querySelector('.menu-toggle');const m=document.querySelector('.
   m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu()));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))closeMenu(true)});
   document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target)&&!t.contains(e.target))closeMenu()});
-  window.addEventListener('resize',()=>{if(window.innerWidth>900&&m.classList.contains('open'))closeMenu()});
+  window.addEventListener('resize',()=>{if(window.innerWidth>1100&&m.classList.contains('open'))closeMenu()});
 }const y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
 
 // Rodapé semântico permanece no HTML e está disponível sem JavaScript.
