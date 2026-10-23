@@ -1,4 +1,13 @@
-const t=document.querySelector('.menu-toggle');const m=document.querySelector('.menu');if(t&&m){t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded','false')}))}const y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+const t=document.querySelector('.menu-toggle');const m=document.querySelector('.menu');if(t&&m){
+  if(!m.id)m.id='menu-principal';
+  t.setAttribute('aria-controls',m.id);
+  function closeMenu(returnFocus=false){m.classList.remove('open');t.setAttribute('aria-expanded','false');if(returnFocus)t.focus()}
+  t.addEventListener('click',()=>{const open=m.classList.toggle('open');t.setAttribute('aria-expanded',String(open));t.setAttribute('aria-label',open?'Fechar menu':'Abrir menu')});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu()));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('open'))closeMenu(true)});
+  document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target)&&!t.contains(e.target))closeMenu()});
+  window.addEventListener('resize',()=>{if(window.innerWidth>900&&m.classList.contains('open'))closeMenu()});
+}const y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
 
 const siteFooter = document.querySelector('footer.site-footer');
 if (siteFooter) {
