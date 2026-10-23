@@ -977,3 +977,65 @@ img{height:auto}
 .eb-lead-links a{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:50px;padding:17px 0;border-bottom:1px solid var(--eb-hairline);font-weight:700;text-underline-offset:5px}
 @media(max-width:900px){.eb-lead-hero-grid,.eb-lead-split{grid-template-columns:1fr}.eb-lead-hero-grid{gap:0}.eb-lead-hero-copy{padding:60px 0 45px}.eb-lead-photo{min-height:0}.eb-lead-photo img{height:66vw;min-height:360px}.eb-lead-split{gap:28px}}
 @media(max-width:650px){.eb-leadership .eb-section{padding-block:58px}.eb-lead-hero h1{font-size:clamp(2.55rem,10vw,4rem)}.eb-lead-photo img{height:90vw;min-height:290px}.eb-lead-rows article{grid-template-columns:32px 1fr;gap:12px}.eb-lead-steps>div{grid-template-columns:1fr;gap:4px}.eb-lead-secondary-photo img{height:95vw;min-height:0}}
+
+
+/* Bloco 07 — riscos psicossociais, componente editorial isolado */
+.eb-psychorisks{color:var(--eb-text);background:var(--eb-ivory)}
+.eb-psychorisks h1,.eb-psychorisks h2,.eb-psychorisks h3{font-family:var(--eb-serif);font-weight:400;letter-spacing:-.03em;line-height:1.13}
+.eb-psychorisks h2{font-size:clamp(2.2rem,4vw,4rem);margin:16px 0 25px}
+.eb-psychorisks p{line-height:1.75}
+.eb-risk-hero{background:var(--eb-white)}
+.eb-risk-hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(30px,6vw,90px);align-items:stretch}
+.eb-risk-hero-copy{align-self:center;padding:clamp(65px,8vw,122px) 0}
+.eb-risk-hero h1{font-size:clamp(2.75rem,5vw,5.1rem);margin:20px 0 28px}
+.eb-risk-lead{font-size:clamp(1.1rem,1.65vw,1.38rem);color:#39423e}
+.eb-risk-hero .btn{background:var(--eb-forest);color:white;border-color:var(--eb-forest);margin-top:22px}
+.eb-risk-portrait{margin:0;position:relative;background:var(--eb-sand);min-height:660px}
+.eb-risk-portrait img{display:block;width:100%;height:100%;min-height:660px;object-fit:cover;object-position:center 22%}
+.eb-risk-portrait figcaption{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(255,253,249,.94);padding:10px 14px;font-size:.77rem}
+.eb-risk-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:clamp(30px,7vw,112px);align-items:start}
+.eb-risk-understand,.eb-risk-author,.eb-risk-paths{background:var(--eb-white)}
+.eb-risk-understand p,.eb-risk-examples p,.eb-risk-thinking p,.eb-risk-author p,.eb-risk-responsibility p,.eb-risk-paths p,.eb-risk-end p{color:var(--eb-secondary)}
+.eb-risk-examples{background:var(--eb-ivory)}
+.eb-risk-list{border-top:1px solid var(--eb-hairline);margin-top:36px}
+.eb-risk-list article{display:grid;grid-template-columns:58px minmax(0,1fr);gap:24px;padding:26px 0;border-bottom:1px solid var(--eb-hairline)}
+.eb-risk-list article>span{padding-top:8px;color:var(--eb-copper);font-weight:700;font-size:.8rem}
+.eb-risk-list h3{font-size:clamp(1.45rem,2.3vw,2.2rem);margin:0 0 8px}
+.eb-risk-list p{margin:0;max-width:75ch}
+.eb-risk-source-note{font-size:.84rem;max-width:74ch}
+.eb-risk-thinking{background:var(--eb-sand)}
+.eb-risk-diagram{border-top:1px solid rgba(37,35,32,.3);margin:30px 0}
+.eb-risk-diagram>div{display:grid;grid-template-columns:135px 1fr;gap:18px;padding:17px 0;border-bottom:1px solid rgba(37,35,32,.3)}
+.eb-risk-diagram span{color:var(--eb-secondary)}
+.eb-risk-author-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(32px,8vw,120px);align-items:center}
+.eb-risk-author figure{margin:0;background:var(--eb-sand)}
+.eb-risk-author img{display:block;width:100%;height:min(65vw,650px);min-height:380px;object-fit:cover;object-position:center 20%}
+.eb-risk-author figcaption{padding:12px 0;background:var(--eb-white);font-size:.8rem;color:var(--eb-secondary)}
+.eb-risk-responsibility{background:var(--eb-forest);color:white}
+.eb-risk-responsibility .eb-overline{color:#eed0b4}
+.eb-risk-responsibility p{color:#e5e9e4}
+.eb-risk-responsibility .eb-text-link{color:white;text-underline-offset:5px}
+.eb-risk-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,32px);margin-top:35px}
+.eb-risk-path-grid article{border-top:2px solid var(--eb-copper);padding:24px 0}
+.eb-risk-path-grid h3{font-size:clamp(1.45rem,2vw,2rem);margin:17px 0 12px}
+.eb-risk-path-grid a{display:inline-block;margin-top:14px;min-height:44px;color:var(--eb-forest);font-weight:700;text-underline-offset:4px}
+.eb-risk-end{background:#eae3d9}
+.eb-risk-links{border-top:1px solid var(--eb-hairline)}
+.eb-risk-links>a{display:flex;justify-content:space-between;gap:20px;min-height:50px;padding:19px 0;border-bottom:1px solid var(--eb-hairline);font-weight:700;text-underline-offset:5px}
+@media(max-width:900px){
+.eb-risk-hero-grid,.eb-risk-split,.eb-risk-author-grid{grid-template-columns:1fr}
+.eb-risk-hero-grid{gap:0}
+.eb-risk-hero-copy{padding:60px 0 45px}
+.eb-risk-portrait{min-height:0}
+.eb-risk-portrait img{height:68vw;min-height:360px}
+.eb-risk-split,.eb-risk-author-grid{gap:28px}
+}
+@media(max-width:700px){.eb-risk-path-grid{grid-template-columns:1fr;gap:12px}}
+@media(max-width:650px){
+.eb-psychorisks .eb-section{padding-block:58px}
+.eb-risk-hero h1{font-size:clamp(2.5rem,9.5vw,4rem)}
+.eb-risk-portrait img{height:92vw;min-height:290px}
+.eb-risk-author img{height:95vw;min-height:0}
+.eb-risk-list article{grid-template-columns:32px 1fr;gap:13px}
+.eb-risk-diagram>div{grid-template-columns:1fr;gap:3px}
+}
