@@ -59,3 +59,81 @@ document.querySelectorAll('[data-current-year]').forEach(el=>el.textContent=Stri
     root.innerHTML='<p class="geb-blog-status">Os artigos não puderam ser carregados agora. <a href="'+blog+'?categoria=Desenvolvimento">Consultar Desenvolvimento no Blog GEB →</a></p>';
   });
 })();
+
+
+/* GA4 Eduarda Bispo — opt-in via preferências de privacidade */
+(function () {
+  "use strict";
+  const measurementId = "G-FSYVX9Q7JS";
+  const preferenceKey = "eduarda_bispo_analytics_consent_v1";
+  let preference = null;
+  let loaded = false;
+  try { preference = localStorage.getItem(preferenceKey); } catch (_) {}
+
+  function enableAnalytics() {
+    if (loaded) return;
+    loaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, { send_page_view: true });
+    const tag = document.createElement("script");
+    tag.async = true;
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(tag);
+  }
+
+  function dismiss() {
+    const panel = document.getElementById("eb-analytics-privacy");
+    if (panel) panel.remove();
+  }
+  function setPreference(granted) {
+    preference = granted ? "granted" : "denied";
+    try { localStorage.setItem(preferenceKey, preference); } catch (_) {}
+    if (granted) enableAnalytics();
+    else if (loaded && typeof window.gtag === "function") {
+      window.gtag("consent", "update", { analytics_storage: "denied" });
+    }
+    dismiss();
+  }
+  function openPreferences() {
+    dismiss();
+    const panel = document.createElement("section");
+    panel.id = "eb-analytics-privacy";
+    panel.setAttribute("aria-label", "Preferências de privacidade do site");
+    panel.style.cssText = "position:fixed;bottom:18px;left:16px;right:16px;margin:auto;max-width:600px;z-index:2147483000;background:white;color:#1b2928;border:1px solid #465b57;box-shadow:0 8px 28px rgba(0,0,0,.2);padding:20px;font:14px/1.5 system-ui,Arial,sans-serif";
+    const h = document.createElement("strong");
+    h.textContent = "Privacidade e medição";
+    h.style.cssText = "display:block;font-size:17px;margin-bottom:8px";
+    const message = document.createElement("p");
+    message.textContent = "Com sua autorização, utilizamos o Google Analytics para compreender a audiência e melhorar este site. Você pode recusar e alterar esta escolha posteriormente.";
+    message.style.cssText = "margin:0 0 14px";
+    const actions = document.createElement("div");
+    actions.style.cssText = "display:flex;gap:8px;flex-wrap:wrap";
+    function action(label, granted) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.style.cssText = "min-height:44px;padding:9px 14px;background:" + (granted ? "#1b2928" : "#fff") + ";color:" + (granted ? "#fff" : "#1b2928") + ";border:1px solid #1b2928;cursor:pointer;font:600 13px system-ui,Arial,sans-serif";
+      b.addEventListener("click", function () { setPreference(granted); });
+      actions.appendChild(b);
+    }
+    action("Continuar sem medição", false);
+    action("Aceitar medição", true);
+    panel.append(h,message,actions);
+    document.body.appendChild(panel);
+  }
+  function init() {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.textContent = "Privacidade";
+    b.setAttribute("aria-label", "Alterar preferências de privacidade e medição");
+    b.style.cssText = "position:fixed;bottom:8px;left:8px;z-index:2147482999;min-height:34px;border:1px solid #465b57;background:#fff;color:#1b2928;padding:6px 10px;font:12px system-ui,Arial,sans-serif;cursor:pointer";
+    b.addEventListener("click", openPreferences);
+    document.body.appendChild(b);
+    if (preference === "granted") enableAnalytics();
+    else if (preference !== "denied") openPreferences();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
