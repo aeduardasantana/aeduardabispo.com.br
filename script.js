@@ -12,14 +12,13 @@ const t=document.querySelector('.menu-toggle');const m=document.querySelector('.
 // Rodapé semântico permanece no HTML e está disponível sem JavaScript.
 document.querySelectorAll('[data-current-year]').forEach(el=>el.textContent=String(new Date().getFullYear()));
 
-/* Vitrine Blog GEB: mesmos índices públicos utilizados pelo blog, por data de publicação. */
+/* Vitrine Blog GEB: descobre índices publicados sem lista de lotes congelada. */
 (function(){
   const root=document.getElementById('geb-blog-articles');
   if(!root)return;
   const blog='https://blog.grupoeduardabispo.com.br/';
-  // A origem GitHub Raw permite leitura CORS por sites externos, sem depender dos headers do servidor do blog.
   const raw='https://raw.githubusercontent.com/aeduardasantana/gebblog/main/conteudo/';
-  const indices=['indices/legado.json','indices/lote-01.json','indices/lote-02.json','indices/lote-03.json','indices/lote-04.json','indices/lote-05.json','indices/lote-06.json'];
+  const directory='https://api.github.com/repos/aeduardasantana/gebblog/contents/conteudo/indices?ref=main';
   const esc=s=>String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
   const iso=a=>{
@@ -33,15 +32,32 @@ document.querySelectorAll('[data-current-year]').forEach(el=>el.textContent=Stri
     const text=clean(a.resumo);
     if(validSummary(text))return text;
     const seo=clean(a.descricaoSEO);
-    if(validSummary(seo))return seo;
-    return 'Leia o artigo completo no Blog GEB.';
+    return validSummary(seo)?seo:'Leia o artigo completo no Blog GEB.';
   };
   const load=async path=>{
     const res=await fetch(raw+path,{cache:'no-store'});
     if(!res.ok)throw new Error(path+': HTTP '+res.status);
     return res.json();
   };
-  Promise.allSettled(indices.map(load)).then(results=>{
+  async function indexPaths(){
+    const res=await fetch(directory,{headers:{Accept:'application/vnd.github+json'},cache:'no-store'});
+    if(!res.ok)throw new Error('Índice GitHub: HTTP '+res.status);
+    const files=await res.json();
+    if(!Array.isArray(files))throw new Error('Resposta inválida do diretório de índices');
+    const batches=files.map(f=>f.name).filter(n=>/^lote-\d+\.json$/.test(n))
+      .sort((a,b)=>Number(b.match(/\d+/)[0])-Number(a.match(/\d+/)[0]));
+    // Dez lotes recentes cobrem a vitrine; a lista se atualiza automaticamente quando surgem novos lotes.
+    return batches.slice(0,10).map(n=>'indices/'+n);
+  }
+  async function render(){
+    let paths;
+    try{paths=await indexPaths();}
+    catch(error){
+      console.warn('Vitrine Blog GEB: descoberta de índices indisponível',error);
+      // Fallback para períodos recentes conhecidos, sem retornar aos lotes antigos da versão anterior.
+      paths=Array.from({length:11},(_,i)=>'indices/lote-'+String(34-i).padStart(2,'0')+'.json');
+    }
+    const results=await Promise.allSettled(paths.map(load));
     const merged=new Map();
     results.forEach(r=>{
       if(r.status==='fulfilled'&&Array.isArray(r.value))r.value.forEach(a=>{
@@ -52,9 +68,10 @@ document.querySelectorAll('[data-current-year]').forEach(el=>el.textContent=Stri
       const cats=[a.categoria,...(Array.isArray(a.categorias)?a.categorias:[])];
       return cats.some(c=>['desenvolvimento','eduarda'].includes(norm(c)));
     }).sort((a,b)=>iso(b).localeCompare(iso(a))||String(a.titulo||'').localeCompare(String(b.titulo||''),'pt-BR')).slice(0,3);
-    if(!articles.length)throw new Error('Sem artigos públicos da categoria Desenvolvimento');
+    if(!articles.length)throw new Error('Sem artigos publicados da categoria Desenvolvimento');
     root.innerHTML=articles.map(a=>'<article class="geb-blog-card"><span class="geb-blog-category">DESENVOLVIMENTO</span><h3><a href="'+blog+'artigo/'+encodeURIComponent(a.slug)+'/" target="_blank" rel="noopener noreferrer">'+esc(a.titulo)+'</a></h3><p>'+esc(summary(a))+'</p><time>'+esc(a.dataPublicacao||'')+'</time></article>').join('');
-  }).catch(error=>{
+  }
+  render().catch(error=>{
     console.error('Vitrine Blog GEB:',error);
     root.innerHTML='<p class="geb-blog-status">Os artigos não puderam ser carregados agora. <a href="'+blog+'?categoria=Desenvolvimento">Consultar Desenvolvimento no Blog GEB →</a></p>';
   });
